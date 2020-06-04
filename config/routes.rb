@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   root to: 'home#top'
   get 'home/about' => 'home#about'
   get "search" => "users#search"
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
+
 end

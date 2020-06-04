@@ -29,6 +29,10 @@
 		</tr>
 </table>
 <%= render 'users/follow_form', user: @user %>
+<% if current_user != user %>
+  <%= link_to 'chatを始める', chat_path(user.id)%>
+<% end %>
+
 
 <div class="row">
 <% if user.id == current_user.id %>
